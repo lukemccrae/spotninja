@@ -1,0 +1,30 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    /* bottom = footer height */
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#title {
+    color: white;
+}
+
+#row {
+    margin: 0;
+}
+
+#map {
+    width: 70em;
+    height: 35em;
+    margin: 0;
+}
