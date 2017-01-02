@@ -1,3 +1,4 @@
+//this function runs as soon as the page loads. it shows a map zoomed out.
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -13,6 +14,7 @@ function initMap() {
     });
 }
 
+//this function returns location data to create the heatmap
 function getPoints() {
     return [
         new google.maps.LatLng(38.826165, -104.823676),
@@ -30,7 +32,6 @@ $(document).ready(function() {
         $.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latPosition + ',' + longPosition + '&key=AIzaSyB6mjYhp5ca_RPpOdHu_Ul7E-YY6BYzmms')
             .done(function(data) {
                 console.log(data);
-                $('#greeting').append(data.results[5].formatted_address);
             })
             .fail(function(error) {
                 console.log(error);
@@ -40,6 +41,8 @@ $(document).ready(function() {
     })
     var heatmap;
 
+    //this function creates the map with the heatmap included. It runs after the document is loaded and the
+    // geolocation function has returned coordinates for the users current location
     function initialize() {
         var myLatLng = new google.maps.LatLng(latPosition, longPosition);
         map = new google.maps.Map(document.getElementById('map'), {
